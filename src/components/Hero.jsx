@@ -1,8 +1,11 @@
 import { motion } from "framer-motion"
 import Particles from "react-tsparticles"
 import { loadSlim } from "tsparticles-slim"
+import { useNavigate } from 'react-router-dom'
 
-const Hero = ({ setShowLogin }) => {
+const Hero = () => {
+  const navigate = useNavigate()
+
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -115,6 +118,10 @@ const Hero = ({ setShowLogin }) => {
     }
   }
 
+  const handleGetStarted = () => {
+    navigate('/dashboard')
+  }
+
   return (
     <div className="min-h-screen relative bg-gradient-to-br from-white via-gray-50 to-gray-100 overflow-x-hidden">
       <div className="absolute inset-0">
@@ -209,7 +216,7 @@ const Hero = ({ setShowLogin }) => {
               className="pt-8"
             >
               <motion.button
-                onClick={() => setShowLogin(true)}
+                onClick={handleGetStarted}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 animate="animate"

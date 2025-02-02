@@ -1,0 +1,80 @@
+.stock-card {
+  background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* This is the KEY change: */
+    flex-basis: 250px; /* Sets a fixed base width for the cards */
+    flex-grow: 0;      /* Prevents cards from growing */
+    flex-shrink: 0;    /* Prevents cards from shrinking below base width */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.stock-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Ensure header takes full card width */
+}
+
+.stock-info {
+  display: flex;
+  align-items: center;
+}
+
+.stock-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.stock-symbol {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.stock-change {
+  font-size: 1.2rem;
+}
+
+.stock-change.positive {
+  color: green;
+}
+
+.stock-change.negative {
+  color: red;
+}
+
+.stock-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.stock-name {
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+  width: 100%; /* Ensure name takes full card width */
+}
+
+.stock-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  width: 100%; /* Ensure container takes full width of its parent */
+}
+
+@media (max-width: 768px) {
+  .stock-card {
+      flex-basis: 90%; /* Adjust for smaller screens */
+      margin: 10px auto;
+  }
+}
